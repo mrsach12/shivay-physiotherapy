@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivay Physiotherapy Clinic — Patna</title>
+  <meta name="description" content="Shivay Physiotherapy Clinic in Patna offers evidence-based physiotherapy: rehabilitation, pain management, sports physio, posture & ergonomics." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1e1e1e;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --secondary: #0ea5e9;
+      --accent: #22c55e;
+      --border: #e5e7eb;
+      --card: #f8fafc;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+      color: var(--text); background: var(--bg);
+    }
+
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    header { position: sticky; top: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 50; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { font-weight: 800; letter-spacing: 0.2px; }
+    .nav-links a { margin-left: 16px; text-decoration: none; color: var(--text); font-weight: 600; }
+    .nav-links a:hover { color: var(--primary); }
+    .tone-toggle { display: inline-flex; gap: 8px; align-items: center; }
+    .tone-toggle button { padding: 8px 12px; border: 1px solid var(--border); background: #fff; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .tone-toggle button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .hero { padding: 72px 0 40px; }
+    .hero .eyebrow { color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.12em; }
+    .hero h1 { font-size: 36px; margin: 10px 0; line-height: 1.15; }
+    .hero p { color: var(--muted); font-size: 18px; max-width: 700px; }
+    .cta { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { background: var(--primary); color: #fff; border: none; border-radius: 8px; padding: 12px 16px; cursor: pointer; font-weight: 700; text-decoration: none; }
+    .btn-secondary { background: #fff; color: var(--primary); border: 2px solid var(--primary); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-weight: 700; text-decoration: none; }
+
+    section { padding: 40px 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 26px; margin: 0 0 12px; }
+    .section-desc { color: var(--muted); margin-bottom: 24px; }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 720px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { color: var(--muted); margin: 0; }
+
+    .bio { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 900px) { .bio { grid-template-columns: 1.2fr 1fr; align-items: start; } }
+    .bio-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .bio-card h3 { margin: 0 0 10px; }
+    .bio-list { list-style: none; padding: 0; margin: 10px 0 0; }
+    .bio-list li { margin: 6px 0; color: var(--muted); }
+
+    .contact { background: linear-gradient(135deg, #eff6ff, #ecfeff); border-top: 1px solid var(--border); }
+    form { display: grid; gap: 12px; max-width: 640px; }
+    input, textarea, select { padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; }
+    label { font-weight: 600; font-size: 14px; }
+    .small { font-size: 12px; color: var(--muted); }
+
+    footer { padding: 24px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+
+    .tone { display: none; }
+    .tone.active { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Shivay Physiotherapy Clinic</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#bio">Bio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="tone-toggle" aria-label="Tone toggle">
+        <button id="btn-friendly" class="active" type="button">Friendly</button>
+        <button id="btn-formal" type="button">Formal</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div id="hero-friendly" class="tone active">
+          <div class="eyebrow">Physiotherapy that meets you where you are</div>
+          <h1>Move better, feel stronger, live pain-free</h1>
+          <p>Recover from injuries, reduce pain, and improve everyday mobility with sessions designed to support your health journey—carefully, confidently, and at your pace.</p>
+          <div class="cta">
+            <a href="#contact" class="btn-primary">Book an appointment</a>
+            <a href="#services" class="btn-secondary">Explore services</a>
+          </div>
+        </div>
+        <div id="hero-formal" class="tone">
+          <div class="eyebrow">Evidence-based physiotherapy care</div>
+          <h1>Comprehensive rehabilitation, pain management, and mobility restoration</h1>
+          <p>We deliver patient-centered, outcome-driven physiotherapy using advanced techniques and individualized care plans to enhance function and quality of life.</p>
+          <div class="cta">
+            <a href="#contact" class="btn-primary">Referral & booking</a>
+            <a href="#services" class="btn-secondary">View clinical services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="section-desc">From hands-on treatment to tailored exercise plans, choose the support that matches your goals.</p>
+
+        <div id="services-friendly" class="grid tone active">
+          <div class="card">
+            <h3>Recovery support</h3>
+            <p>Guided rehab after accidents or surgery so you return to daily life safely and confidently.</p>
+          </div>
+          <div class="card">
+            <h3>Pain & stiffness relief</h3>
+            <p>Hands-on therapy, movement, and modalities to ease discomfort and restore flexibility.</p>
+          </div>
+          <div class="card">
+            <h3>Strength & mobility</h3>
+            <p>Personalized exercise plans to build resilience, balance, and body control.</p>
+          </div>
+          <div class="card">
+            <h3>Sports physiotherapy</h3>
+            <p>Performance-minded care for athletes at every level—prevent injuries, come back stronger.</p>
+          </div>
+          <div class="card">
+            <h3>Posture & lifestyle</h3>
+            <p>Ergonomic advice and movement habits that fit your routine and reduce strain.</p>
+          </div>
+          <div class="card">
+            <h3>Preventive care</h3>
+            <p>Programs that keep you moving well and help avoid future setbacks.</p>
+          </div>
+        </div>
+
+        <div id="services-formal" class="grid tone">
+          <div class="card">
+            <h3>Post-surgical rehabilitation</h3>
+            <p>Protocol-based recovery pathways to restore function following operative procedures.</p>
+          </div>
+          <div class="card">
+            <h3>Pain management programs</h3>
+            <p>Multimodal interventions, including manual therapy, exercise, and adjunct modalities.</p>
+          </div>
+          <div class="card">
+            <h3>Neurological physiotherapy</h3>
+            <p>Individualized therapy for stroke, Parkinson’s, and other neuromotor conditions.</p>
+          </div>
+          <div class="card">
+            <h3>Orthopedic care</h3>
+            <p>Rehab for fractures, arthritis, joint replacements, and musculoskeletal injuries.</p>
+          </div>
+          <div class="card">
+            <h3>Sports injury treatment</h3>
+            <p>Assessment, return-to-play planning, and prevention strategies for acute and chronic injuries.</p>
+          </div>
+          <div class="card">
+            <h3>Ergonomic assessments</h3>
+            <p>Workplace and task-specific evaluations with corrective recommendations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIO -->
+    <section id="bio">
+      <div class="container">
+        <h2>About the physiotherapist</h2>
+        <div id="bio-friendly" class="bio tone active">
+          <div class="bio-card">
+            <h3>Hi, I’m Abhishek, PT</h3>
+            <p>I’m passionate about helping people move without fear and feel at home in their bodies. I’ve supported recovery after injuries, guided athletes toward better performance, and helped many improve everyday mobility.</p>
+            <ul class="bio-list">
+              <li><strong>Approach:</strong> Supportive, practical, and tailored to your goals</li>
+              <li><strong>Experience:</strong> Musculoskeletal, sports rehab, and posture care</li>
+              <li><strong>Focus:</strong> Empower you with skills that last beyond each session</li>
+            </ul>
+          </div>
+          <div class="bio-card">
+            <h3>Credentials & background</h3>
+            <ul class="bio-list">
+              <li><strong>Education:</strong> [Degree], [Institution]</li>
+              <li><strong>Licensure:</strong> Registered Physiotherapist</li>
+              <li><strong>Certifications:</strong> [Manual therapy, sports rehab, etc.]</li>
+              <li><strong>Languages:</strong> Hindi, English</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="bio-formal" class="bio tone">
+          <div class="bio-card">
+            <h3>Abhishek, PT</h3>
+            <p>Licensed physiotherapist with experience across musculoskeletal and neurological rehabilitation. Dedicated to evidence-based practice and individualized care plans to optimize functional outcomes.</p>
+            <ul class="bio-list">
+              <li><strong>Clinical focus:</strong> Post-operative rehab, chronic pain, neuro-rehab</li>
+              <li><strong>Methods:</strong> Manual therapy, therapeutic exercise, adjunct modalities</li>
+              <li><strong>Outcomes:</strong> Improved independence, reduced pain, enhanced mobility</li>
+            </ul>
+          </div>
+          <div class="bio-card">
+            <h3>Training & credentials</h3>
+            <ul class="bio-list">
+              <li><strong>Education:</strong> [Degree], [Institution]</li>
+              <li><strong>Licensure:</strong> Registered Physiotherapist</li>
+              <li><strong>Certifications:</strong> [Orthopedic, Neuro, Sports]</li>
+              <li><strong>Publications & presentations:</strong> [Optional]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Book an appointment</h2>
+        <p class="section-desc">Send a request and we’ll contact you to confirm your slot and answer any questions.</p>
+        <form action="#" method="post" onsubmit="event.preventDefault(); alert('Thanks, your request has been received. We will contact you shortly.');">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" value="+91 9199902177" />
+          </div>
+          <div>
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Post-surgical rehabilitation</option>
+              <option>Pain management</option>
+              <option>Neurological physiotherapy</option>
+              <option>Orthopedic care</option>
+              <option>Sports physiotherapy</option>
+              <option>Posture & ergonomics</option>
+              <option>Preventive care</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Notes</label>
+            <textarea id="message" name="message" rows="4" placeholder="Briefly share your goals or concerns"></textarea>
+          </div>
+          <button class="btn-primary" type="submit">Request booking</button>
+          <p class="small">By submitting, you consent to be contacted regarding your appointment.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>Shivay Physiotherapy Clinic · Patna</div>
+      <div>Contact: Abhishek · Phone: +91 9199902177</div>
+    </div>
+  </footer>
+
+  <script>
+    const btnFriendly = document.getElementById('btn-friendly');
+    const btnFormal = document.getElementById('btn-formal');
+
+    const friendlyBlocks = [
+      document.getElementById('hero-friendly'),
+      document.getElementById('services-friendly'),
+      document.getElementById('bio-friendly'),
+    ];
+    const formalBlocks = [
+      document.getElementById('hero-formal'),
+      document.getElementById('services-formal'),
+      document.getElementById('bio-formal'),
+    ];
+
+    function setTone(tone) {
+      const friendly = tone === 'friendly';
+      friendlyBlocks.forEach(b => b.classList.toggle('active', friendly));
+      formalBlocks.forEach(b => b.classList.toggle('active', !friendly));
+      btnFriendly.classList.toggle('active', friendly);
+      btnFormal.classList.toggle('active', !friendly);
+    }
+
+    btnFriendly.addEventListener('click', () => setTone('friendly'));
+    btnFormal.addEventListener('click', () => setTone('formal'));
+  </script>
+</body>
+</html>
